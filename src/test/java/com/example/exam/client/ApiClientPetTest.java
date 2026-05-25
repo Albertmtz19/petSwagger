@@ -13,13 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ApiClientPetTest {
 
-    private Pet testPet = new Pet(1L,"Firulais","available");
+    private Pet testPet = new Pet(1L, "Firulais", "available");
 
     @Test
     void testApiConnectorExternal() {
 
         WebClient mockClient = Mockito.mock(WebClient.class, Mockito.RETURNS_DEEP_STUBS);
-
 
         Mockito.when(mockClient.get()
                         .uri("/pet/{id}", 1L)
@@ -28,39 +27,31 @@ public class ApiClientPetTest {
                 .thenReturn(Mono.just(testPet));
 
 
-
         assertNotNull(testPet);
         assertEquals("Firulais", testPet.getName());
-
-
 
 
     }
 
 
-        @Test
-        void testApiConnectorExternalCreate() {
+    @Test
+    void testApiConnectorExternalCreate() {
 
-            WebClient mockClient = Mockito.mock(WebClient.class, Mockito.RETURNS_DEEP_STUBS);
+        WebClient mockClient = Mockito.mock(WebClient.class, Mockito.RETURNS_DEEP_STUBS);
 
+        Mockito.when(mockClient.post()
+                        .uri("/pet")
+                        .bodyValue(Mockito.any(Pet.class))
+                        .retrieve()
+                        .bodyToMono(Pet.class))
+                .thenReturn(Mono.just(testPet));
 
+        Parametria mockParametria = Mockito.mock(Parametria.class);
+        Mockito.when(mockParametria.getEndPoint()).thenReturn("http://prueba-api");
 
-            Mockito.when(mockClient.post()
-                            .uri("/pet")
-                            .bodyValue(Mockito.any(Pet.class))
-                            .retrieve()
-                            .bodyToMono(Pet.class))
-                    .thenReturn(Mono.just(testPet));
-
-            Parametria mockParametria = Mockito.mock(Parametria.class);
-            Mockito.when(mockParametria.getEndPoint()).thenReturn("http://prueba-api");
-
-            ApiClientPet client = new ApiClientPet(mockParametria);
-
-
-            Pet response = testPet;
-            assertNotNull(response);
-            assertEquals("Firulais", response.getName());
+        Pet response = testPet;
+        assertNotNull(response);
+        assertEquals("Firulais", response.getName());
 
     }
 }
