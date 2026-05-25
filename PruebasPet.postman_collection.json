@@ -1,0 +1,87 @@
+{
+  "info": {
+    "_postman_id": "fa5f40cf-2d5d-4cd5-9b12-2d267d5b9e9c",
+    "name": "PruebasPet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18514233"
+  },
+  "item": [
+    {
+      "name": "Obtener mascota",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/pet/10000023",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "pet",
+            "10000023"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crear",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 10000023,\r\n    \"name\": \"testingPet1\",\r\n    \"status\": \"available\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/pet",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "pet"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

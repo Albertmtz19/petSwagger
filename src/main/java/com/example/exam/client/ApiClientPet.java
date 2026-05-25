@@ -28,7 +28,7 @@ public class ApiClientPet {
 
     private final Pet resEmpty = new Pet();
 
-    public Pet ApiConnectorExternal(String path, Long idPet) {
+    public Pet apiConnectorExternal(String path, Long idPet) {
 
 
         try {
@@ -50,7 +50,7 @@ public class ApiClientPet {
         }
     }
 
-    public Pet ApiConnectorExternalCreate(String path, Pet in) {
+    public Pet apiConnectorExternalCreate(String path, Pet in) {
 
         try {
             WebClient client = WebClient.create(val.getEndPoint());

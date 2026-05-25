@@ -12,6 +12,9 @@
 * `GET /api/pet/{idPet}` - Devuelve la mascota con el id especificado
 * `POST /api/pet` - Devuelve la mascota creada con el id generado
 
+### justificación
+Se adjunta collecttion de postman para probar los servicios disponibles `PruebasPet.postman_collection.json`
+
 ### Referencias
 * Desarrollador - Jose Alberto Martinez
 * email - albertmtzh03@gmail.com
