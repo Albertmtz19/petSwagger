@@ -16,3 +16,4 @@
 * Desarrollador - Jose Alberto Martinez
 * email - albertmtzh03@gmail.com
 * Tel - 5624680964
+* linkedin - https://www.linkedin.com/in/jose-alberto-mart%C3%ADnez-hern%C3%A1ndez-365842207/
