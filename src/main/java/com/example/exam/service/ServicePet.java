@@ -22,7 +22,7 @@ public class ServicePet {
 
     public Pet consultaPet(Long idPet) {
 
-        Pet out = clientPet.ApiConnectorExternal("/pet/{petId}", idPet);
+        Pet out = clientPet.apiConnectorExternal("/pet/{petId}", idPet);
 
         log.info("ID : --------  {}", out.getId());
         log.info("NAME : ------ {}", out.getName());
@@ -38,16 +38,16 @@ public class ServicePet {
         LocalDateTime dateCreation = LocalDateTime.now();
         UUID iDCreation = UUID.randomUUID();
 
-        Pet outResponse = clientPet.ApiConnectorExternalCreate("/pet", in);
+        Pet outResponse = clientPet.apiConnectorExternalCreate("/pet", in);
 
         log.info("ID : --------  {}", outResponse.getId());
         log.info("NAME : ------ {}", outResponse.getName());
         log.info("STATUS : ------  {}", outResponse.getStatus());
 
-        OutRegistedPet outRegistedPet = new OutRegistedPet(iDCreation, dateCreation, true, outResponse.getName());
+        return new OutRegistedPet(iDCreation, dateCreation, true, outResponse.getName());
 
 
-        return outRegistedPet;
+
     }
 
 
